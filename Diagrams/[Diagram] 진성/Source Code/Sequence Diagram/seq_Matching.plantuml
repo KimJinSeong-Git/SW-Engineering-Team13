@@ -1,0 +1,20 @@
+@startuml
+actor User
+participant System
+database DB
+
+User -> System: 원하는 성별 클릭
+System --> User: 선택 성별, 사용자의 MBTI 정보 출력
+System --> User: 매칭 시작 여부를 묻는 창 출력
+
+User -> System: 확인 버튼 클릭
+System -> System: 요청자의 MBTI에 따라 최고 궁합 추정
+System -> DB: 해당 MBTI 대기열 정보 요청
+DB -> DB: 대기열 확인
+DB --> System: 대기열 정보 반환
+System -> User: 대기열 정보 출력
+System -> User: "매칭 성공 시 쪽지로 상대방의 프로필이 전송됩니다." 메시지 전송/출력
+
+
+
+@enduml

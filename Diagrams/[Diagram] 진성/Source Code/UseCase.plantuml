@@ -1,0 +1,16 @@
+@startuml
+usecase "계정등록" as register
+usecase "계정관리" as account_manage
+usecase "프로필 조회" as profile_view
+usecase "인원 매칭 시스템" as matching_sys
+usecase "쪽지 시스템" as msg_sys
+
+
+:전체 사용자: --> account_manage  
+:전체 사용자: --> profile_view
+:전체 사용자: --> matching_sys
+:전체 사용자: --> msg_sys
+
+:신규 사용자: --> register 
+:신규 사용자: --|> :전체 사용자:
+@enduml
