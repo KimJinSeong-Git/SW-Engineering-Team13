@@ -1,0 +1,11 @@
+@startuml
+actor 사용자 as 사용자
+participant ":시스템" as 시스템
+participant ":DB" as DB
+
+사용자 -> 시스템 : '스터디 참가' 버튼 클릭
+시스템 -> DB : 참가자 정보 등록 요청
+DB -> DB : 참가자 정보 등록
+시스템 <-- DB : 참가자 정보 등록 완료
+사용자 <-- 시스템 : 스터디 참가 완료 메시지 출력
+@enduml

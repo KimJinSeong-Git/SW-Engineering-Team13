@@ -1,0 +1,11 @@
+@startuml
+actor 사용자 as 사용자
+participant ":시스템" as 시스템
+participant ":DB" as DB
+
+사용자 -> 시스템 : '참가자 조회' 버튼 클릭
+시스템 -> DB : 참가자 조회 요청
+DB -> DB : 참가자 조회
+시스템 <-- DB : 참가자 조회 완료
+사용자 <-- 시스템 : 참가자 정보 페이지 출력
+@endumls
