@@ -1,0 +1,14 @@
+@startuml
+hide empty description
+left to right direction
+
+state "참가 확인" as 확인
+state "참가 중" as 중
+state "참가 완료" as 완료
+
+
+[*] --> 확인 : <<참가하기 버튼 클릭>>
+확인 --> 중 : <<참가자 정보 등록>>
+중 --> 완료 : <<참가완료 메시지창 출력>>
+완료 --> [*]
+@enduml
