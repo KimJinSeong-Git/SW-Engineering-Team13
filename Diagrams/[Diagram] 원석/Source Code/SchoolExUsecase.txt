@@ -1,0 +1,17 @@
+@startuml
+
+left to right direction
+
+actor "사용자" as user
+
+ 
+
+rectangle 학교탐험게임 {
+
+user-->(게임하기) :게임 실행하기
+
+user-->(기록조회하기) : 여태까지 한 기록 조회하기 
+
+}
+
+@enduml
