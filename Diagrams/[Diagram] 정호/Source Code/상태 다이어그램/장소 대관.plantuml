@@ -1,0 +1,19 @@
+@startuml
+hide empty description
+left to right direction
+
+state "대관 준비" as 준비
+state "대관 준비 중" as 준비중
+state "대관 가능" as 가능
+state "대관 중" as 중
+state "대관 완료" as 완료
+
+
+[*] --> 준비 : <<공간 대관 버튼 클릭>>
+준비 --> 준비중 : <<공간 대관 페이지 출력>>
+준비중 --> 가능 : <<세미나실 대관 버튼 클릭>>
+준비중 --> 가능 : <<도서관 대관 버튼 클릭>>
+가능 --> 중 : <<대관 장소 입력>>
+중 --> 완료 : <<대관 장소 쪽지 전송>>
+완료 --> [*]
+@enduml

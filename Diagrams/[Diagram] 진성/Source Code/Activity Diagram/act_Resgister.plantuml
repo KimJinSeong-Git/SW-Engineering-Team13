@@ -1,0 +1,14 @@
+@startuml
+start
+:회원가입;
+
+repeat
+    :회원가입 정보 입력;
+    :회원가입 버튼 클릭;
+    :ID, 닉네임 중복 확인;
+backward:입력 정보 확인 메시지 출력;
+repeat while (ID, 닉네임 중복?) is (Y) not (N)
+
+:회원가입 완료 메시지 출력;
+stop
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+start
+:계정관리;
+:계정 정보 확인;
+repeat
+repeat
+:수정 정보(프로필, 비밀번호) 입력;
+:수정 완료 버튼 클릭;
+backward:닉네임 확인 메시지 출력;
+repeat while (닉네임 중복?) is (Y) not (N)
+backward:비밀번호 확인 메시지 출력;
+repeat while ( 확인 비밀번호 일치?) is (N) not (Y)
+:수정완료 메시지 출력;
+stop
+@enduml

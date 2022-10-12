@@ -1,0 +1,8 @@
+@startuml
+
+start
+:프로필 보기;
+:사용자 정보 불러오기;
+:프로필 페이지 출력;
+stop
+@enduml

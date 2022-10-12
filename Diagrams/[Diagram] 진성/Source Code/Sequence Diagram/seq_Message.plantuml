@@ -1,0 +1,38 @@
+@startuml
+actor User
+participant System
+database DB
+
+User -> System: 쪽지 버튼 클릭
+System --> DB: 사용자 쪽지 보관함 정보 요청
+DB -> DB: 보관함 정보 확인
+DB --> System: 보관함 정보 반환
+System -> System: 쪽지 정보(인원, 마지막 메시지) 페이지에 반영
+System -> System: 확인하지 않은 메시지 강조 표시
+System --> User: 쪽지 페이지 전송/출력
+
+alt 메시지 삭제
+    User -> System: 삭제 체크박스 클릭
+    System --> User: 체크된 메시지 강조
+    User -> System: 메시지 삭제 버튼 클릭
+    System -> DB: 해당 메시지 정보 전송
+    System -> DB: 메시지 정보 삭제 요청
+    DB -> DB: 메시지 삭제
+    DB --> System: 메시지 삭제 확인 정보 반환
+    System --> User: 보관함에 삭제 정보 반영
+end
+
+User -> System: 메시지 교환을 원하는 사용자 타이틀 클릭
+System -> DB: 해당 사용자와의 메시지 로그 요청
+DB -> DB: 메시지 로그 확인
+DB --> System: 메시지 로그 반환
+System --> User: 해당 사용자와 주고받은 메시지 출력
+
+User -> System: 메시지 입력
+User -> System: 메시지 전송 버튼 클릭
+System -> DB: 메시지, 수신자, 발신자 정보 전송
+System -> DB: 해당 수신자에게 메시지 전송 요청
+DB -> DB: 해당 수신자 보관함에 메시지 반영
+DB --> System: 반영 완료 정보 반환
+System --> User: 보낸 메시지 정보 갱신
+@enduml

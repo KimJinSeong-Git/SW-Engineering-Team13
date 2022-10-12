@@ -1,0 +1,13 @@
+@startuml
+actor User
+participant System
+database DB
+
+User -> System: 프로필 보기 클릭
+System -> DB: 사용자 정보 요청
+DB -> DB: 사용자 정보 확인
+DB --> System: 사용자 정보 반환
+System --> User: 프로필 페이지 전송/출력
+
+
+@enduml

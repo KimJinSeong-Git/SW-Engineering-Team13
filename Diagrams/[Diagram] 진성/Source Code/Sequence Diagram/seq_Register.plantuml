@@ -1,0 +1,22 @@
+@startuml
+actor User
+participant System
+database DB
+
+User -> System: 회원가입 버튼 클릭
+System --> User: 회원가입 페이지 전송/출력
+
+User -> System: 회원가입 정보 입력 후 확인 버튼 클릭
+System -> DB: ID, 닉네임 중복 확인 요청
+DB -> DB: ID, 닉네임 중복 확인
+DB --> System: 중복확인 결과 반환
+
+alt ID, 닉네임 중복
+    System --> User: 입력 정보 확인 메시지 출력
+else 정상 입력 확인
+    System -> DB: 회원 정보 DB 반영 요청
+    DB -> DB: 회원 정보 DB 반영
+    DB --> System: 입력 정보 저장 확인
+    System --> User: 회원가입 완료 메시지 출력
+end
+@enduml
