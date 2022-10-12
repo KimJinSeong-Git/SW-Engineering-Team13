@@ -6,16 +6,14 @@
 
 ## Description
 
-------
-
 - 본 프로그램/서비스는 MBTI 검사를 통해 나온 유형을 기반으로 서로 성향이 맞을 확률이 높은 친구를 만들기 위한 웹 서비스입니다.
 - 코로나19로 인해 비대면 환경의 생활이 길어짐에 따라 대면 활동이 없어 교우관계가 원활하지 못한 상황에서 갑작스런 전면 대면 전환에 지인이 필요한 사람들을 위한 서비스입니다.
 - Target
   - 연세대학교 미래캠퍼스 비대면 세대
 
-## Features
+  
 
-------
+## Features
 
 ### 매칭 시스템
 
@@ -92,8 +90,6 @@
 
 ## Software Development Process
 
-------
-
 - Based on Waterfall Model
   - 소프트웨어 공학에서 가장 기본이 되는 모델
   - 각 개발 단계별 산출물이 명확
@@ -105,16 +101,12 @@
 
 ## Collaboration Tool
 
-------
-
 - Github
 - Notion
 
   
 
 ## Schedule
-
-------
 
 - 총 9주 계획
   - 중간고사, 기말고사 기간 제외
@@ -137,8 +129,6 @@
 
 ## Requirements
 
-------
-
 - Node.js & Express
 - Vue.js, HTML, CSS
 - Docker
@@ -146,7 +136,5 @@
   
 
 ## Usage
-
-------
 
 - 사용 방법
