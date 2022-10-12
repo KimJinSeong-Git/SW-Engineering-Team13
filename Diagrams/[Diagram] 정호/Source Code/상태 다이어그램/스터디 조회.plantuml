@@ -1,0 +1,16 @@
+@startuml
+hide empty description
+left to right direction
+
+state "조회 가능" as 가능
+state "조회 확인" as 확인
+state "조회 중" as 중
+state "조회 완료" as 완료
+
+
+[*] --> 가능 : <<조회 정보 입력>>
+가능 --> 확인 : <<조회 버튼 클릭>>
+확인 --> 중 : <<스터디 조회>>
+중 --> 완료 : <<조회된 스터디 출력>>
+완료 --> [*]
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+hide empty description
+left to right direction
+
+state "탈퇴 가능" as 탈퇴가능
+state "탈퇴 확인" as 탈퇴확인
+state "탈퇴 중" as 탈퇴중
+state "탈퇴 완료" as 탈퇴완료
+
+
+[*] --> 탈퇴가능 : <<탈퇴 버튼 클릭>>
+탈퇴가능 --> 탈퇴확인 : <<탈퇴 확인 창 출력>>
+탈퇴확인 --> 탈퇴중 : <<예 버튼 클릭>>
+탈퇴확인 --> [*] : <<아니오 버튼 클릭>>
+탈퇴중 --> 탈퇴완료 : <<참가자 정보 삭제>>
+탈퇴완료 --> [*]
+@enduml
